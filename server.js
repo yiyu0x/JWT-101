@@ -46,7 +46,7 @@ app.post('/login', (req, res) => {
 const api = express.Router()
 api.use((req, res, next) => {
 	let token = req.headers.auth
-	console.log('token', token)
+	console.log('received token:', token)
 	if (token) {
 		jwt.verify(token, 'secret', (err, decoded) => {
 			if (err) {
